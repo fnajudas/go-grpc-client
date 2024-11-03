@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "proto/student";
+
+message StudentReq {
+    string nik = 1;
+}
+
+message StudentResp {
+    string name = 1;
+    int64 age = 2;
+}
+
+service StudentService {
+    rpc Student(StudentReq) returns (StudentResp);
+}
